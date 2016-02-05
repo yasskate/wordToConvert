@@ -5,9 +5,9 @@ from Tkinter import *
 v0=Tk()
 v0.geometry("500x500")
 
-imagen1=PhotoImage(file="/root/Desktop/wordToConvert/hck1.gif")
+imagen1=PhotoImage(file="./hck1.gif")
 
-imagen2 = PhotoImage(file="/root/Desktop/wordToConvert/dogLikeSir.gif")
+imagen2 = PhotoImage(file="./dogLikeSir.gif")
 label2 = Label(v0,image=imagen2).pack()
 
 def imprimir(texto): print texto
@@ -28,6 +28,5 @@ def cerrar_splashscreen():
 v1.after(4000,cerrar_splashscreen)
 Label(v1,text="BIENVENIDO A NUESTRA APLICACIÓN",bg="black",fg="white",font=(15)).pack()
 Label(v1,image=imagen1).pack()
-
 
 v0.mainloop()

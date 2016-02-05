@@ -26,7 +26,7 @@ ventana.resizable(0,0)
 '''         					ADAPTACION DE LA VENTANA PRINCIPAL                               '''
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
-imagenHCK = PhotoImage(file='/home/haslam/Programacion/Python/wordToConvert/hck1.gif')
+imagenHCK = PhotoImage(file='./hck1.gif')
 labHCK = Label(ventana,image=imagenHCK,relief=FLAT)
 labHCK.place(x=700,y=43)
 
@@ -75,7 +75,7 @@ botonGenerar.place(x=420,y=75)
 
 
 #----------------------------------------------------------------------------------------------------
-'''   					CREACION DEL SPLASH PRINCIPAL                                                   '''
+'''   					CREACION DEL SPLASH PRINCIPAL                                              '''
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
 
@@ -85,8 +85,8 @@ v1.config(bg="white")
 v1.protocol("WM_DELETE_WINDOW", "onexit")
 v1.resizable(0,0)
 
-dogSir = PhotoImage(file="/home/haslam/Programacion/Python/wordToConvert/dogLikeSir.gif")
-imagenHCK1 = PhotoImage(file='/home/haslam/Programacion/Python/wordToConvert/hck2.gif')
+dogSir = PhotoImage(file="./dogLikeSir.gif")
+imagenHCK1 = PhotoImage(file='./hck2.gif')
 labHCKSplash = Label(v1,image=imagenHCK1,relief=FLAT)
 labHCKSplash.place(x=400,y=20)
 
@@ -104,14 +104,14 @@ v1.after(4000,cerrar_splashscreen)
 labelShowTextSplash = Label(v1,text="PiR00d Haslam",relief=FLAT,bg="white",fg="black",font='{courier 200 bold}')
 labelShowTextSplash.place(x=120,y=15)
 labelShowImgSplash = Label(v1,image=dogSir,relief=FLAT,bg="white",font='{courier 200 bold}',justify="center")
-labelShowImgSplash.place(x=90,y=90)	
+labelShowImgSplash.place(x=90,y=90)
 
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
 
 
 #----------------------------------------------------------------------------------------------------
-'''   					FUCNIONES  A EJECUTAR                                                   '''
+'''   					FUCNIONES  A EJECUTAR                                                     '''
 #----------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------------------
 listadeCadenasAscii = []
@@ -139,8 +139,6 @@ def obtenerAscii(palabra,showAscii):
 	obtenerHex(listadeCadenasAscii,wordHex)
 	obtenerBinario(listadeCadenasAscii,wordBin)
 
-
-
 def obtenerHex(palabra,showHex):
 	listaAscii = palabra
 	listadeCadenasHex = []
@@ -165,7 +163,7 @@ def obtenerBinario(palabra,showBin):
 		varBin = str(varBin)
 		varBin = varBin[2:]
 		cadenaBin = cadenaBin + varBin
-	showBin.set("["+cadenaBin+"]")	
+	showBin.set("["+cadenaBin+"]")
 
 def copy2clip(word):
 	v1.clipboard_clear()
@@ -173,6 +171,5 @@ def copy2clip(word):
 	clipText = v1.clipboard_get()
 	global cadenaHex
 	print "Cadena copiada correctamente! :%s" %cadenaHex
-
 
 ventana.mainloop()
