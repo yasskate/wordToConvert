@@ -1,7 +1,21 @@
 #!/usr/bin/env python
 #-*- coding:utf8 -*-
-from Tkinter import *
-import tkMessageBox
+
+flag = True
+while flag:
+    try:
+        from Tkinter import *
+        import tkMessageBox
+        flag = False
+    except:
+        print "Tkinter is not installed"
+        opc = raw_input("Would you like to install it? only ubuntu and derivates... [yes/not]: ")
+        if opc == "yes" or opc == "Y" or opc == "y" or opc == "YES" or opc == "Yes":
+            import os
+            os.system("sudo apt-get install python python-tk idle python-pmw python-imaging")
+            raw_input("The installation is succes! Hit enter...")
+        else:
+            exit()
 
 #----------------------------------------------------------------------------------------------------
 '''   					CREACION DE LA VENTANA PRINCIPAL                                           '''
